@@ -38,7 +38,6 @@
               pkgs.zenoh
               pkgs.pkg-config
               pkgs.clang
-              pkgs.git
             ];
           };
         };

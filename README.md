@@ -12,7 +12,7 @@ direnv を使うなら、このディレクトリで `direnv allow`。`.envrc` �
 
 `devShells.default` は `aarch64-darwin` と `x86_64-linux` に出る。
 
-シェルには MoonBit、zenoh-c、clang、pkg-config、git、zenohd が入る。clang と pkg-config は native binding のビルドに使い、zenohd はローカルの疎通確認に使う。MoonBit は [moonbit-community/moonbit-overlay](https://github.com/moonbit-community/moonbit-overlay) を使い、flake.lock で固定する。
+シェルには MoonBit、zenoh-c、clang、pkg-config、zenohd が入る。clang と pkg-config は native binding のビルドに使い、zenohd はローカルの疎通確認に使う。MoonBit は [moonbit-community/moonbit-overlay](https://github.com/moonbit-community/moonbit-overlay) を使い、flake.lock で固定する。
 
 ```sh
 moon version
