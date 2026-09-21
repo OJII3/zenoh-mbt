@@ -26,15 +26,6 @@
             overlays = [ inputs.moonbit-overlay.overlays.default ];
           };
           moonbit = pkgs.moonbit-bin.moonbit.latest;
-
-          # nixpkgs installs zenohc.pc (Name: zenohc), not zenoh-c.pc.
-          # Requires reuses that file, so include/lib paths stay absolute.
-          zenoh-c-pkgconfig = pkgs.writeTextDir "lib/pkgconfig/zenoh-c.pc" ''
-            Name: zenoh-c
-            Description: Alias for nixpkgs zenohc.pc
-            Version: ${pkgs.zenoh-c.version}
-            Requires: zenohc
-          '';
         in
         {
           packages.moonbit = moonbit;
@@ -44,12 +35,9 @@
             packages = [
               moonbit
               pkgs.zenoh-c
-              zenoh-c-pkgconfig
-              pkgs.zenoh # provides zenohd
-              pkgs.cmake
+              pkgs.zenoh
               pkgs.pkg-config
               pkgs.clang
-              pkgs.gnumake
               pkgs.git
             ];
           };
