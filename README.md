@@ -1,6 +1,6 @@
 # zenoh-mbt
 
-MoonBit から zenoh-c を使うための binding を作る。
+MoonBit から zenoh-c を使うための binding。
 
 ## 開発環境
 
@@ -8,30 +8,10 @@ MoonBit から zenoh-c を使うための binding を作る。
 nix develop
 ```
 
-## ビルドとリンク
+## パッケージ
 
-`moon.mod.json` があるディレクトリで実行する。
+native target 用の MoonBit パッケージ。`zenoh-c` のヘッダとライブラリは利用側の開発環境から解決する。
 
 ```sh
-moon build
-moon test
+moon check --target native
 ```
-
-zenoh-c を使うパッケージは `preferred-target` を `native` にする。
-
-zenoh-c のリンク設定には `pkg-config` の出力を使う。`cc` を指定しないデバッグビルドは tcc を使うため、システムライブラリをリンクするときは clang を指定する。store path はシェルごとに変わるので、展開したフラグはコミットしない。
-
-```
-options(
-  "native-stub": [ "stub.c" ],
-  link: {
-    native: {
-      "cc": "clang",
-      "cc-flags": "<pkg-config --cflags zenohc の出力>",
-      "cc-link-flags": "<pkg-config --libs zenohc の出力>",
-    },
-  },
-)
-```
-
-古い `moon.pkg.json` なら同じ項目を `"link"."native"` に置く。ヘッダは `zenoh.h`、ライブラリは `libzenohc`。
