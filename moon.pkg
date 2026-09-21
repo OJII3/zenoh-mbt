@@ -4,5 +4,5 @@ supported_targets = "native"
 
 options(
   "native-stub": [ "zenoh_stub.c" ],
-  link: { "native": { "cc": "clang", "cc-link-flags": "-lzenohc" } },
+  link: { "native": { "stub-cc-flags": "${build.ZENOHC_CFLAGS}" } },
 )
