@@ -40,6 +40,8 @@
               pkgs.pkg-config
               pkgs.clang
               pkgs.python3
+              pkgs.cargo
+              pkgs.rustc
             ];
           };
         };
