@@ -1,0 +1,8 @@
+pkgtype(kind: "library")
+
+supported_targets = "native"
+
+options(
+  "native-stub": [ "zenoh_stub.c" ],
+  link: { "native": { "stub-cc-flags": "${build.ZENOHC_CFLAGS}" } },
+)

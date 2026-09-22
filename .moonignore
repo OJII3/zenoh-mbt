@@ -1,0 +1,10 @@
+.direnv/
+.github/
+.gitmodules
+.git/
+.envrc
+build/
+flake.lock
+flake.nix
+scripts/
+zenoh-c/

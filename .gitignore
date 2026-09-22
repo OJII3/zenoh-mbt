@@ -1,3 +1,8 @@
 .direnv/
 result
 result-*
+_build/
+.mooncakes/
+build/
+native/
+__pycache__/

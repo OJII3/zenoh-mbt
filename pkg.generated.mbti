@@ -1,0 +1,16 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "ojii3/zenoh-mbt"
+
+// Values
+pub fn open() -> Session
+
+// Errors
+
+// Types and methods
+pub type Session
+pub fn Session::close(Self) -> Int
+pub fn Session::put(Self, String, Bytes) -> Int
+
+// Type aliases
+
+// Traits
